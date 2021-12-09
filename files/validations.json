@@ -1,0 +1,19 @@
+{
+  "validations": [
+	{
+      "validation_name": "validate_delimiter",
+      "error_code": "err001",
+	  "enable" : true
+    },
+    {
+      "validation_name": "validate_data_types",
+      "error_code": "err002",
+	  "enable" : true
+    },
+    {
+      "validation_name": "validate_mandatory_columns",
+      "error_code": "err003",
+	  "enable" : true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+pyspark==2.4.3
+pypandoc==1.5
+boto3==1.20.5
+pytest==6.2.5
+pandas
+pynt
+utils
+pyspark-stubs==2.4.0

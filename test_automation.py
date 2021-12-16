@@ -1,8 +1,6 @@
 import datetime
 import os
 import pytest
-
-from awsglue.context import GlueContext
 from pyspark.sql import SparkSession
 
 from automation import Transform, Driver
@@ -16,23 +14,12 @@ class TestAutomation(object):
     jars_path = os.path.join(os.getcwd(), "jars", "*")
     spark = SparkSession \
         .builder \
-        .appName("MSSQL to CSV") \
+        .appName("test-automation") \
         .config("spark.driver.extraClassPath", jars_path) \
         .config("spark.executor.extraClassPath", jars_path) \
         .getOrCreate()
 
     sc = spark.sparkContext
-    glue_context = GlueContext(sc)
-
-    # def get_schema(self, parition_spec):
-    #     self.schema_detail = [{"Name": "insert_Year", "Type": "int"}, {"Name": "insert_month", "Type": "int"},
-    #                              {"Name": "insert_day", "Type": "int"}, {"Name": "insert_hours", "Type": "int"},
-    #                              {"Name": "insert_mins", "Type": "int"}]
-    #     return self.schema_detail
-    #
-    # def get_partition_location(self, partition_spec, partition):
-    #     self.partition_location = 'dir/test_table/insert_sec=sec/insert_row=row/insert_x=x/insert_y=y/'
-    #     return self.partition_location
 
     @pytest.fixture
     def source_schema(self):

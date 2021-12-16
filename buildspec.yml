@@ -6,7 +6,7 @@ phases:
       python: 3.8
     commands:
       - echo Installing necessary dependencies
-      - pip3 install pytest
+      - pip3 install -r requirements.txt
   pre_build:
     commands:
       - echo Installing source dependencies...

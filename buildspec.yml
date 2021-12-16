@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       - echo Build started
-      - echo Compiling the code
+      - echo Compiling the code...
       - python -m pytest --junitxml=test/report
   post_build:
     commands:

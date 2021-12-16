@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       python: 3.7
       commands:
-        - Installing necessary dependencies
+        - echo Installing necessary dependencies
         - pip3 install pytest
   pre_build:
     commands:

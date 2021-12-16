@@ -2,15 +2,25 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - echo Installing app
+    runtime-versions:
+      python: 3.7
+      commands:
+        - Installing necessary dependencies
+        - pip3 install pytest
   pre_build:
     commands:
       - echo Installing source dependencies...
   build:
     commands:
-      - echo Build started on `date`
+      - echo Build started
       - echo Compiling the code
+      - python -m pytest --junitxml=test/report
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo Build completed
+  reports:
+    pytest_reports:
+      files:
+        - report
+      base-directory: test
+      file-format: JUNITXML

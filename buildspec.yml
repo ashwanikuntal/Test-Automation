@@ -4,9 +4,9 @@ phases:
   install:
     runtime-versions:
       python: 3.7
-      commands:
-        - echo Installing necessary dependencies
-        - pip3 install pytest
+    commands:
+      - echo Installing necessary dependencies
+      - pip3 install pytest
   pre_build:
     commands:
       - echo Installing source dependencies...
@@ -18,9 +18,9 @@ phases:
   post_build:
     commands:
       - echo Build completed
-  reports:
-    pytest_reports:
-      files:
-        - report
-      base-directory: test
-      file-format: JUNITXML
+reports:
+  pytest_reports:
+    files:
+      - report
+    base-directory: test
+    file-format: JUNITXML

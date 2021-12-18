@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       amazon/aws-glue-libs: glue_libs_2.0.0_image_01
     commands:
-      - echo Installing necessary dependencies
+      - echo Installing necessary dependencies..
   pre_build:
     commands:
       - echo Installing source dependencies...

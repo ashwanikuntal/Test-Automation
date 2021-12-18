@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      ashwanikuntal/glue-with-pytest: latest
+      amazon/aws-glue-libs: glue_libs_2.0.0_image_01
     commands:
       - echo Installing necessary dependencies
   pre_build:

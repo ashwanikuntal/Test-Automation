@@ -16,7 +16,7 @@ phases:
       - echo Compiling the code...
       - python --version
       - ls -lrt
-      - pytest
+      - pytest --junitxml=test/reports/test-report.xml
   post_build:
     commands:
       - echo Build completed

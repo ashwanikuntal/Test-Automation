@@ -16,13 +16,13 @@ phases:
       - echo Compiling the code...
       - python --version
       - ls -lrt
-      - python -m pytest --junitxml=test/report.xml
+      - pytest
   post_build:
     commands:
       - echo Build completed
-reports:
-  pytest_reports:
-    files:
-      - 'report.xml'
-    base-directory: "test"
-    file-format: JUNITXML
+  reports:
+    pytest_reports:
+      files:
+        - 'test-report.xml'
+      base-directory: "test/reports"
+      file-format: "JUNITXML"

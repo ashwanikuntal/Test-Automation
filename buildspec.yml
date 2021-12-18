@@ -12,7 +12,7 @@ phases:
       - pip3 install -r requirements.txt
   build:
     commands:
-      - echo Build started
+      - echo Build started...
       - echo Compiling the code...
       - python --version
       - ls -lrt

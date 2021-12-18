@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.7
+      ashwanikuntal/glue-with-pytest: latest
     commands:
       - echo Installing necessary dependencies
   pre_build:
@@ -20,6 +20,6 @@ phases:
 reports:
   pytest_reports:
     files:
-      - report
-    base-directory: test
+      - 'report.xml'
+    base-directory: "test"
     file-format: JUNITXML

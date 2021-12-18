@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started
       - echo Compiling the code...
-      - python -version
+      - python --version
       - ls -lrt
   post_build:
     commands:

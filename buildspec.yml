@@ -6,32 +6,20 @@ phases:
       amazon/aws-glue-libs: glue_libs_2.0.0_image_01
     commands:
       - echo Installing necessary dependencies..
-      - sudo apt install unzip
-      - cd /usr/bin
-      - curl -o terraform.zip https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
-      - unzip terraform.zip
   pre_build:
     commands:
       - echo Installing source dependencies...
-      - pwd
-      - ls -lrt
-      - cd "$CODEBUILD_SRC_DIR"
       - pip3 install -r requirements.txt
   build:
     commands:
       - echo Build started.....
+      - echo Compiling the code...
       - python --version
       - ls -lrt
-      - terraform init
-      - terraform apply -input=false -auto-approve
       - pytest --junitxml=test/reports/test-report.xml
   post_build:
     commands:
-      - echo "Terraform script completed on `date`"
       - echo Build completed
-artifacts:
-  files:
-    - '**/*'
 reports:
   pytest_reports:
     files:

@@ -6,8 +6,7 @@ phases:
       amazon/aws-glue-libs: glue_libs_2.0.0_image_01
     commands:
       - echo Installing necessary dependencies..
-      - ls
-      - pip3 install unzip
+      - pip3 install -r requirements.txt
       - cd /usr/bin
       - curl -o terraform.zip https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
       - unzip terraform.zip
@@ -17,7 +16,6 @@ phases:
       - pwd
       - ls -lrt
       - cd "$CODEBUILD_SRC_DIR"
-      - pip3 install -r requirements.txt
   build:
     commands:
       - echo Build started.....

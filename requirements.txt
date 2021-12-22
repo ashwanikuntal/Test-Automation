@@ -6,3 +6,4 @@ pandas
 pynt
 utils
 pyspark-stubs==2.4.0
+unzip
